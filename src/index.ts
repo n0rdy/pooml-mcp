@@ -8,14 +8,15 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { z } from "zod";
 
 const POOML_URL = process.env.POOML_URL;
-const QUERY_SECRET = process.env.POOML_QUERY_AUTH_SECRET;
+// POOML_QUERY_AUTH_SECRET accepted for 0.1.0 compatibility
+const QUERY_SECRET = process.env.POOML_QUERY_API_AUTH_SECRET ?? process.env.POOML_QUERY_AUTH_SECRET;
 // optional: Cloudflare Access service token, for pooml behind a tunnel
 const CF_ID = process.env.POOML_CF_ACCESS_CLIENT_ID;
 const CF_SECRET = process.env.POOML_CF_ACCESS_CLIENT_SECRET;
 
 if (!POOML_URL || !QUERY_SECRET) {
   console.error(
-    "pooml-mcp needs POOML_URL and POOML_QUERY_AUTH_SECRET env vars " +
+    "pooml-mcp needs POOML_URL and POOML_QUERY_API_AUTH_SECRET env vars " +
       "(the query API must be enabled on the pooml server: POOML_QUERY_API_ENABLED=true)",
   );
   process.exit(1);

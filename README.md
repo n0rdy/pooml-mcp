@@ -19,13 +19,13 @@ Strictly read-only: every query goes through pooml's layered SQL validation
 ## Setup
 
 1. On the pooml server, enable the query API:
-   `POOML_QUERY_API_ENABLED=true` and `POOML_QUERY_AUTH_SECRET=<min 32 chars>`.
+   `POOML_QUERY_API_ENABLED=true` and `POOML_QUERY_API_AUTH_SECRET=<min 32 chars>`.
 2. Add to your MCP client. For Claude Code:
 
 ```bash
 claude mcp add pooml \
   -e POOML_URL=https://your-pooml-host:8080 \
-  -e POOML_QUERY_AUTH_SECRET=your-query-secret \
+  -e POOML_QUERY_API_AUTH_SECRET=your-query-secret \
   -- npx -y @pooml/mcp
 ```
 
@@ -39,7 +39,7 @@ Or in `.mcp.json`:
       "args": ["-y", "@pooml/mcp"],
       "env": {
         "POOML_URL": "https://your-pooml-host:8080",
-        "POOML_QUERY_AUTH_SECRET": "your-query-secret"
+        "POOML_QUERY_API_AUTH_SECRET": "your-query-secret"
       }
     }
   }

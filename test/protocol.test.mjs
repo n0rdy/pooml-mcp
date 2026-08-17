@@ -38,7 +38,7 @@ test("initialize + tools/list without a pooml instance", async () => {
     env: {
       PATH: process.env.PATH,
       POOML_URL: "http://localhost:1", // never contacted for these calls
-      POOML_QUERY_AUTH_SECRET: "x".repeat(32),
+      POOML_QUERY_API_AUTH_SECRET: "x".repeat(32),
     },
   });
   try {
