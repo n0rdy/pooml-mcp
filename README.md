@@ -1,4 +1,4 @@
-# pooml-mcp
+# @pooml/mcp
 
 MCP server for [pooml](https://github.com/n0rdy/pooml): query your logs and
 metrics with plain SQL from Claude, or any other MCP client.
@@ -26,7 +26,7 @@ Strictly read-only: every query goes through pooml's layered SQL validation
 claude mcp add pooml \
   -e POOML_URL=https://your-pooml-host:8080 \
   -e POOML_QUERY_AUTH_SECRET=your-query-secret \
-  -- npx -y pooml-mcp
+  -- npx -y @pooml/mcp
 ```
 
 Or in `.mcp.json`:
@@ -36,7 +36,7 @@ Or in `.mcp.json`:
   "mcpServers": {
     "pooml": {
       "command": "npx",
-      "args": ["-y", "pooml-mcp"],
+      "args": ["-y", "@pooml/mcp"],
       "env": {
         "POOML_URL": "https://your-pooml-host:8080",
         "POOML_QUERY_AUTH_SECRET": "your-query-secret"

@@ -1,5 +1,5 @@
 {
-  "name": "pooml-mcp",
+  "name": "@pooml/mcp",
   "version": "0.1.0",
   "description": "MCP server for pooml - query your logs and metrics with SQL from any MCP client",
   "license": "Apache-2.0",
