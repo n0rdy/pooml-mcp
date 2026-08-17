@@ -1,0 +1,53 @@
+version: 2
+updates:
+  # Daily security updates
+  - package-ecosystem: "npm"
+    target-branch: "main"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "12:00"
+      timezone: "Europe/Oslo"
+    assignees:
+      - "n0rdy"
+    # Enables security updates only
+    open-pull-requests-limit: 0
+  - package-ecosystem: "github-actions"
+    target-branch: "main"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "12:00"
+      timezone: "Europe/Oslo"
+    assignees:
+      - "n0rdy"
+    # Enables security updates only
+    open-pull-requests-limit: 0
+
+  # Weekly updates for all packages
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "12:00"
+      timezone: "Europe/Oslo"
+    assignees:
+      - "n0rdy"
+    groups:
+      npm:
+        patterns:
+          - "**"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "12:00"
+      timezone: "Europe/Oslo"
+    assignees:
+      - "n0rdy"
+    groups:
+      github-actions:
+        patterns:
+          - "**"
